@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron');
-const path = require('path'); // Make sure this line is at the very top
+const path = require('path');
 
-function createWindow() {
+const createWindow = () => {
     const win = new BrowserWindow({
         width: 1000,
         height: 800,
@@ -11,9 +11,9 @@ function createWindow() {
         }
     });
 
-    // UPDATED LINE: Point to 'src/index.html'
-    win.loadFile(path.join(__dirname, 'src', 'index.html'));
-}
+    // FIX: Use path.join to correctly locate index.html inside the 'src' folder
+    win.loadFile(path.join(__dirname, 'src/index.html'));
+};
 
 app.whenReady().then(createWindow);
 
