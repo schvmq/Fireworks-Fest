@@ -11,7 +11,6 @@ const createWindow = () => {
         }
     });
 
-    // FIX: Use path.join to correctly locate index.html inside the 'src' folder
     win.loadFile(path.join(__dirname, 'src/index.html'));
 };
 
